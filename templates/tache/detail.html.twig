@@ -17,9 +17,12 @@
     <div class="lead mb-5">
         {{ tache.description }}
     </div>
+    {% if not tache.terminee %}
     <button type="button" class="btn btn-primary">
         <a href="{{ path('app_tache_terminer', {'id': tache.id}) }}" class="text-white text-decoration-none">Terminer</a>
     </button>
+    {% endif %}
+    
 
     <a href="{{ path('app_tache') }}" class="btn btn-outline-secondary">
         ← Retour à la liste

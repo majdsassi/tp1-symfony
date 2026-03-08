@@ -45,4 +45,7 @@
             {{ articles|length }} article(s) en base de données
         </p>
     {% endif %}
+    <button type="button" class="btn btn-primary">
+        <a href="{{ path('app_article_nouveau') }}" class="text-white text-decoration-none">Créer un article</a>
+    </button>
 {% endblock %}

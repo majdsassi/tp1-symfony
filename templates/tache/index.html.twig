@@ -24,8 +24,10 @@
                 </thead>
                 <tbody>
                     {% for tache in taches %}
+                    
                         <tr>
-                            <td class="text-center">{{ tache.id }}</td>
+                       
+                            <td class="text-center"> <a href="{{ path('app_tache_detail', {'id': tache.id}) }}" class="text-decoration-none text-dark">{{ tache.id }}</a></td>
                             <td>{{ tache.titre }}</td>
                             <td>{{ tache.description }}</td>
                             <td>{{ tache.dateCreation|date('d/m/Y') }}</td>
@@ -36,10 +38,15 @@
                                     <span class="badge bg-warning text-dark">📝 Waiting</span>
                                 {% endif %}
                             </td>
+                        
                         </tr>
+                       
                     {% endfor %}
                 </tbody>
             </table>
+            <button type="button" class="btn btn-primary">
+                <a href="{{ path('app_tache_nouveau') }}" class="text-white text-decoration-none">Créer une tache</a>
+            </button>
         </div>
         <p class="mt-3 text-muted">
             {{ taches|length }} tache(s) en base de données
