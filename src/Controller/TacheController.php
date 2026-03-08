@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Entity\Tache ; 
-use  Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\TacheRepository;
 
 final class TacheController extends AbstractController
@@ -48,4 +48,5 @@ public function terminer(Tache $tache, EntityManagerInterface $em): Response
 
     return $this->redirectToRoute('app_tache_detail', ['id' => $tache->getId()]);
 }
+
 }
